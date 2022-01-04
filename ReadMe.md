@@ -6,7 +6,6 @@ This sample repo introduces tools in Visual Studio that can help you generate te
 * [Generate test method stubs](https://docs.microsoft.com/visualstudio/test/create-unit-tests-menu)
 * [Code coverage](https://docs.microsoft.com/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)
 * [IntelliTest](https://docs.microsoft.com/visualstudio/test/generate-unit-tests-for-your-code-with-intellitest)
-* Experimental Extension - not yet released, requires vm from interviewer or API key
 
 ### Walkthrough
 
@@ -58,13 +57,3 @@ This sample repo introduces tools in Visual Studio that can help you generate te
 10. Rerun IntelliTest with right-click **Run IntelliTest**.
 11. A different set of tests has now been generated. IntelliTest detected that the null reference and divide by zero cases would no longer be encountered with the new code so it cleaned up the generated tests to only what is still relevant. One null reference test is still apparent, but it passes showing this case is now handled correctly.
 12. If you run code coverage again from **Test > Analyze Code Coverage for All Tests** note that the code coverage for your project as increased substantially. Note the method that we ran IntelliTest on, CalculateTrust, is now 100% code coverage.
-
-#### Experimental
-Note: this functionality is not yet released. It requires a vm provided by interviewer or an API key
-1. This experimental feature is currently called "DeepDev." It's not yet released. It's a project created by Microsoft Research (MSR) to generate tests using AI. It's been trained on tests in the open source on GitHub and is meant to generate tests that are more human-readable.
-2. In ConversionCalculator.cs in the CalculateTrust method right-click and select **DeepDev - Generate Unit Tests**. (There is currenlty a small delay here. Give it 1-2 minutes to generate.)
-3. Take a few minutes to read the generated test results.
-* What are your first observations?
-* Did you expect anything to be different?
-* What do you think of the generated tests in terms of quality and usefulness?
-* Is this something you'd like to use or introduce to your org and team?
