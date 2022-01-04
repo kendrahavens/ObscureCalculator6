@@ -37,14 +37,14 @@ namespace ObscureCalculator6.Models
             double windResistance, bool consentToBeThrown, Technique technique)
         {
             #region
-            //if (technique == null)
-            //{
-            //    throw new ArgumentNullException(nameof(technique));
-            //}
-            //else if (projectilePersonWeight <= 0)
-            //{
-            //    throw new ArgumentException("Avoid divide by zero", "projectilePersonWeight");
-            //}
+            if (technique == null)
+            {
+                throw new ArgumentNullException(nameof(technique));
+            }
+            else if (projectilePersonWeight <= 0)
+            {
+                throw new ArgumentException("Avoid divide by zero", "projectilePersonWeight");
+            }
             #endregion
             double trustInFeet = 0;
 
@@ -79,23 +79,6 @@ namespace ObscureCalculator6.Models
             trustInFeet = technique.ThrowTechnique == "curling" ? trustInFeet + technique.Success : trustInFeet;
 
             return trustInFeet;
-        }
-
-        public class Technique
-        {
-            // Throwing technique
-            string throwTechnique;
-            // Success in applying technique on a scale of 1-5
-            int success;
-
-            public Technique()
-            {
-                throwTechnique = "curling";
-                Success = 2;
-            }
-
-            public string ThrowTechnique { get => throwTechnique; set => throwTechnique = value; }
-            public int Success { get => success; set => success = value; }
         }
 
     }
